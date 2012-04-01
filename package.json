@@ -1,0 +1,24 @@
+{
+	"name": "thumbbot",
+	"version": "0.1.0",
+	"author": "Vadim Demedes <sbioko@gmail.com>",
+	"main": "./index.js",
+	"description": "Thumbnails from video, images, web pages and even audio.",
+	"keywords": ["thumb", "thumbnail", "thumbnails", "video", "image", "audio"],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vdemedes/thumbbot.git"
+	},
+	"devDependencies": {
+		"mocha": "*"
+	},
+	"dependencies": {
+		"google-images": "*",
+		"video-thumb": "*",
+		"magician": "*"
+	},
+	"license": "MIT",
+	"engine": {
+		"node": ">=0.4"
+	}
+}
