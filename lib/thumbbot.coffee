@@ -44,7 +44,7 @@ class Thumbbot
 		that = @
 		if /^http/.test @srcPath
 			return exec "phantomjs #{ __dirname }/sh/render.js #{ @srcPath } #{ @options.viewport.width } #{ @options.viewport.height } #{ @destPath }", ->
-				that.handleImage destPath, destPath, callback
+				that.handleImage that.destPath, that.destPath, callback
 			
 		switch @srcPath.extensionFromFilename()
 			when 'png', 'jpeg', 'jpg', 'gif'
