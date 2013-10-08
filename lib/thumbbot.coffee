@@ -41,26 +41,25 @@ class Thumbbot
 				do callback if callback
 	
 	snap: (callback) ->
-		that = @
 		if /^http/.test @srcPath
-			return exec "phantomjs #{ __dirname }/sh/render.js #{ @srcPath } #{ @options.viewport.width } #{ @options.viewport.height } #{ @destPath }", ->
-				that.handleImage destPath, destPath, callback
+			return exec "phantomjs #{ __dirname }/sh/render.js #{ @srcPath } #{ @options.viewport.width } #{ @options.viewport.height } #{ @destPath }", =>
+				@handleImage @destPath, @destPath, callback
 			
 		switch @srcPath.extensionFromFilename()
 			when 'png', 'jpeg', 'jpg', 'gif'
 				@handleImage @srcPath, @destPath, callback
 			
 			when 'mp4', 'avi', '3gp'
-				return exec "ffmpeg -ss #{ @options.position } -vframes 1 -i #{ @srcPath } -y -f image2 #{ @destPath }", ->
-					that.handleImage that.destPath, that.destPath, callback
+				return exec "ffmpeg -ss #{ @options.position } -vframes 1 -i #{ @srcPath } -y -f image2 #{ @destPath }", =>
+					@handleImage @destPath, @destPath, callback
 			
 			when 'mp3', 'aac', 'wav'
 				filename = @srcPath.filename()
 				cleanFilename = filename.filenameWithoutExtension()
-				googleImages.search cleanFilename, (err, images) ->
+				googleImages.search cleanFilename, (err, images) =>
 					if images[0]
-						images[0].writeTo that.destPath, ->
-							that.handleImage that.destPath, that.destPath, callback
+						images[0].writeTo @destPath, =>
+							@handleImage @destPath, @destPath, callback
 					else
 						callback yes # error, no images found
 			else
