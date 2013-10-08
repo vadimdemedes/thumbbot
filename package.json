@@ -1,6 +1,6 @@
 {
 	"name": "thumbbot",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"author": "Vadim Demedes <sbioko@gmail.com>",
 	"main": "./index.js",
 	"description": "Thumbnails from video, images, web pages and even audio.",
