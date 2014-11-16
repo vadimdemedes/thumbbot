@@ -2,6 +2,8 @@
 
 Create thumbnails from images, videos and web pages.
 
+![NPM stats](https://nodei.co/npm/thumbbot.png?downloads=true)
+
 ## Installation
 
 ```npm install thumbbot --save```
