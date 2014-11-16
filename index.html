@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Thumbbot - Thumbnails from images, videos and web pages</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<link href="stylesheets/main.css" rel="stylesheet">
@@ -21,12 +22,14 @@
 		<div class="code-example">
 			<pre class="line-numbers"><code class="language-javascript">var Thumbbot = require('thumbbot');
 
+// take a snapshot of video at 01:24
 var video = new Thumbbot('video.mp4');
-video.seek('00:01:24'); // take a snapshot of video at 01:24
+video.seek('00:01:24');
 
 var thumbnail = yield video.save();
 
-var page = new Thumbbot('https://google.com');
+// take a snapshot of full page
+var page = new Thumbbot('https://news.ycombinator.com');
 page.window(1024, 768);
 
 var thumbnail = yield page.save();</code></pre>
