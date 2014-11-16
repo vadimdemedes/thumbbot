@@ -1,0 +1,77 @@
+@import 'compass';
+@import 'breakpoint';
+@import 'prism.scss';
+
+$default-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+body {
+	color: #444;
+	font-family: $default-font;
+}
+
+img.logo {
+	display: block;
+	margin: 100px auto 10px;
+	width: 140px;
+	height: 288px;
+}
+
+h1, p.center {
+	text-align: center;
+}
+
+div.container {
+	width: 800px;
+	
+	@include breakpoint(max-width 800px) {
+		width: 100%;
+	}
+}
+
+div.code-example {
+	&, pre, code {
+		background: #fff;
+	}
+	
+	pre, code, span.line-numbers-rows {
+		border: 0;
+	}
+	
+	pre {
+		padding: 14px 0px 14px 3.8em;
+		margin: 0;
+	}
+	
+	code {
+		padding-top: 3px;
+	}
+	
+	width: 480px;
+	margin: 0 auto;
+	@include border-radius(4px);
+}
+
+a.github-link {
+	font-size: 18px;
+	color: #444;
+	border: 2px solid #444;
+	padding: 4px 16px;
+	margin: 30px auto;
+	width: 222px;
+	display: block;
+	text-decoration: none;
+	
+	@include border-radius(50px);
+	
+	&:active {
+		position: relative;
+		top: 1px;
+	}
+}
+
+div.sharing {
+	width: 200px;
+	position: fixed;
+	bottom: 0;
+	left: 4px;
+}

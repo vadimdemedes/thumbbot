@@ -1,1 +1,52 @@
-My Page
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Thumbbot - Thumbnails from images, videos and web pages</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/stylesheets/main.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<a href="https://github.com/vdemedes/thumbbot">
+			<img class="logo" src="images/thumbbot@3x.jpg" alt="Thumbbot">
+		</a>
+		
+		<h1>Thumbbot</h1>
+		<p class="center">
+			Capture thumbnails from images, videos and web pages in Node.js.<br>
+			Thumbbot API is based on ES6 generators, no callbacks or promises.
+		</p>
+		
+		<div class="code-example">
+			<pre class="line-numbers"><code class="language-javascript">var Thumbbot = require('thumbbot');
+
+var video = new Thumbbot('video.mp4');
+video.seek('00:01:24'); // take a snapshot of video at 01:24
+
+var thumbnail = yield video.save();
+
+var page = new Thumbbot('https://google.com');
+page.window(1024, 768);
+
+var thumbnail = yield page.save();</code></pre>
+		</div>
+		
+		<a class="github-link" href="https://github.com/vdemedes/thumbbot">Check it out on GitHub</a>
+	</div>
+	
+	<div class="sharing container">
+		<div class="row">
+			<a class="twitter-share-button" data-text="Just found Thumbbot, library for Node.js, which easily allows capturing thumbnails from images, videos and web pages" data-url="http://vdemedes.github.io/thumbbot" data-related="vdemedes:Developer of Thumbbot" href="https://twitter.com/share">Tweet</a>
+		</div>
+		<div class="row">
+			<iframe src="http://ghbtns.com/github-btn.html?user=vdemedes&repo=mongorito&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+		</div>
+	</div>
+	
+	<script src="/scripts/prism.min.js"></script>
+	<script>
+	window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+	</script>
+</body>
+</html>
