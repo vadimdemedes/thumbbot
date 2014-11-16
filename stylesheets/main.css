@@ -199,28 +199,33 @@ body {
 /* line 12, scss/main.scss */
 img.logo {
   display: block;
-  margin: 100px auto 10px;
+  margin: 100px auto 60px;
   width: 140px;
   height: 288px;
 }
 
 /* line 19, scss/main.scss */
+h1 {
+  margin-bottom: 40px;
+}
+
+/* line 23, scss/main.scss */
 h1, p.center {
   text-align: center;
 }
 
-/* line 23, scss/main.scss */
+/* line 27, scss/main.scss */
 div.container {
   width: 800px;
 }
 @media (max-width: 800px) {
-  /* line 23, scss/main.scss */
+  /* line 27, scss/main.scss */
   div.container {
     width: 100%;
   }
 }
 
-/* line 31, scss/main.scss */
+/* line 35, scss/main.scss */
 div.code-example {
   width: 480px;
   margin: 0 auto;
@@ -228,31 +233,31 @@ div.code-example {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 32, scss/main.scss */
+/* line 36, scss/main.scss */
 div.code-example, div.code-example pre, div.code-example code {
   background: #fff;
 }
-/* line 36, scss/main.scss */
+/* line 40, scss/main.scss */
 div.code-example pre, div.code-example code, div.code-example span.line-numbers-rows {
   border: 0;
 }
-/* line 40, scss/main.scss */
+/* line 44, scss/main.scss */
 div.code-example pre {
   padding: 14px 0px 14px 3.8em;
   margin: 0;
 }
-/* line 45, scss/main.scss */
+/* line 49, scss/main.scss */
 div.code-example code {
   padding-top: 3px;
 }
 
-/* line 54, scss/main.scss */
+/* line 58, scss/main.scss */
 a.github-link {
   font-size: 18px;
   color: #444;
   border: 2px solid #444;
   padding: 4px 16px;
-  margin: 30px auto;
+  margin: 30px auto 40px;
   width: 222px;
   display: block;
   text-decoration: none;
@@ -260,13 +265,13 @@ a.github-link {
   -webkit-border-radius: 50px;
   border-radius: 50px;
 }
-/* line 66, scss/main.scss */
+/* line 70, scss/main.scss */
 a.github-link:active {
   position: relative;
   top: 1px;
 }
 
-/* line 72, scss/main.scss */
+/* line 76, scss/main.scss */
 div.sharing {
   width: 200px;
   position: fixed;
