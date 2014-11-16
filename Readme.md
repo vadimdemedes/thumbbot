@@ -1,66 +1,80 @@
 # Thumbbot
 
-Create thumbnails from images, videos, audio(google images search) and web pages.
+Create thumbnails from images, videos and web pages.
 
-# Installation
+## Installation
 
-`npm install thumbbot`
+```npm install thumbbot --save```
 
-# Requirements
+## Requirements
 
 - PhantomJS - web page snapshots
 - ImageMagick - image thumbnails
 - ffmpeg - video snapshots
 
-# Usage
+## Usage
 
-```coffee-script
-Thumbbot = require 'thumbbot'
-
-# Images
-
-bot = new Thumbbot 'image.png', 'image_thumb.png'
-bot.set width: 200, height: 150
-
-# Resizing
-bot.set method: 'resize'
-bot.snap (err) ->
-	# done
-
-bot.set method: 'crop', x: 0, y: 0
-bot.snap (err) ->
-	# done
-	
-# Videos
-
-bot = new Thumbbot 'video.mp4', 'video_thumb.png'
-bot.set width: 200, height: 150
-bot.set position: '00:05:04'
-bot.snap (err) ->
-	# done
-
-# Audio
-
-bot = new Thumbbot 'Great Nas Song.mp3', 'nas.png'
-bot.set width: 200, height: 150
-bot.snap (err) ->
-	# done
-
-# Web pages
-
-bot = new Thumbbot 'http://google.com', 'google.png'
-bot.set width: 200, height: 150, viewport: width: 1024, height: 768
-# You can apply same techniques here for resizing or cropping the resulting image
-bot.snap (err) ->
-	# done
-
+```javascript
+var Thumbbot = require('thumbbot');
 ```
 
-# License
+### Images
+
+#### Resize
+
+```javascript
+var image = new Thumbbot('image.png');
+image.resize(200, 200); // width, height
+
+// or
+
+image.width(200);
+     .height(200);
+
+var thumbnail = yield image.save();
+```
+
+#### Crop
+
+```javascript
+var image = new Thumbbot('image.png');
+image.crop(0, 0, 200, 200); // x, y, width, height
+
+var thumbnail = yield image.save();
+```
+	
+### Videos
+
+```javascript
+var video = new Thumbbot('video.mp4');
+video.seek('00:01:24'); // take a snapshot at 01:24
+
+var thumbnail = yield video.save();
+```
+
+### Web pages
+
+```javascript
+var page = new Thumbbot('http://smashingmagazine.com');
+page.window(1024, 768) // specify browser window size, optional
+    .crop(100, 100, 400, 400) // specify an area to capture, x, y, width & height, optional
+    .disable('javascript') // disable javascript, optional
+    .disable('images'); // disable loading images, optional
+
+var thumbnail = yield page.save();
+```
+
+## Tests
+
+To run tests execute:
+
+```npm test```
+
+## License
 
 (The MIT License)
 
-Copyright (c) 2011 Vadim Demedes <sbioko@gmail.com>
+Copyright (c) 2014 Vadim Demedes <vdemedes@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

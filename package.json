@@ -1,23 +1,49 @@
 {
-	"name": "thumbbot",
-	"version": "0.2.1",
-	"author": "Vadim Demedes <sbioko@gmail.com>",
-	"main": "./index.js",
-	"description": "Thumbnails from video, images, web pages and even audio.",
-	"keywords": ["thumb", "thumbnail", "thumbnails", "video", "image", "audio"],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/vdemedes/thumbbot.git"
-	},
-	"devDependencies": {
-		"mocha": "*"
-	},
-	"dependencies": {
-		"google-images": "*",
-		"magician": "*"
-	},
-	"license": "MIT",
-	"engine": {
-		"node": ">=0.4"
-	}
+  "name": "thumbbot",
+  "version": "0.3.0",
+  "description": "Thumbnails for video, images and web pages.",
+  "keywords": [
+    "thumb",
+    "thumbnail",
+    "video",
+    "image",
+    "imagemagick",
+    "magick",
+    "ffmpeg",
+    "phantom",
+    "phantomjs",
+    "resize",
+    "crop",
+    "co-image",
+    "co-thumbnail",
+    "co-video",
+    "co"
+  ],
+  "author": "Vadim Demedes <vdemedes@gmail.com>",
+  "main": "./index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --harmony"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vdemedes/thumbbot"
+  },
+  "bugs": {
+    "url": "https://github.com/vdemedes/thumbbot/issues"
+  },
+  "engines": {
+    "node": ">= 0.11.x"
+  },
+  "dependencies": {
+    "co-exec": "^1.1.0",
+    "co-request": "^0.2.0",
+    "magician": "^0.2.0"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "co": "^4.0.0",
+    "mocha": "^2.0.1",
+    "mocha-generators": "^1.0.0"
+  }
 }
