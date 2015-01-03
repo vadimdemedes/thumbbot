@@ -2,7 +2,7 @@
 
 Create thumbnails from images, videos and web pages.
 
-![NPM stats](https://nodei.co/npm/thumbbot.png?downloads=true)
+[![Circle CI](https://circleci.com/gh/vdemedes/thumbbot.svg?style=svg)](https://circleci.com/gh/vdemedes/thumbbot)
 
 ## Installation
 
