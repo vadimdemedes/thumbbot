@@ -1,6 +1,6 @@
 {
   "name": "thumbbot",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Thumbnails for video, images and web pages.",
   "keywords": [
     "thumb",
@@ -17,12 +17,13 @@
     "co-image",
     "co-thumbnail",
     "co-video",
-    "co"
+    "co",
+    "es6"
   ],
   "author": "Vadim Demedes <vdemedes@gmail.com>",
   "main": "./index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --harmony"
+    "test": "./node_modules/.bin/mocha --harmony test/test.js"
   },
   "license": "MIT",
   "repository": {
@@ -36,6 +37,7 @@
     "node": ">= 0.11.x"
   },
   "dependencies": {
+    "6to5": "^2.4.8",
     "co-exec": "^1.1.0",
     "co-request": "^0.2.0",
     "magician": "^0.2.0"
